@@ -3,6 +3,7 @@ import {Container, Typography, Grid, Alert} from "@mui/material";
 import axios from 'axios';
 import {useState, useEffect, createRef} from "react";
 import { Offline } from "react-detect-offline";
+import Link from 'next/link';
 const Home = () => {
   const [loading, setLoading] = useState(false);
   const [pokemons, setPokemons] = useState([]);
