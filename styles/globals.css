@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.m-t-30{
+  margin-top:30px;
+}
+
+.content-scroll{
+	height: 600px;
+	overflow-y: auto;
+}

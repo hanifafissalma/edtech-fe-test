@@ -1,0 +1,9 @@
+{
+    "name": "Edutech FE Test",
+    "short_name": "Edutech FE Test",
+    "theme_color": "#FFFFFF",
+    "background_color": "#FFFFFF",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait"
+  }
