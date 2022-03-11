@@ -21,7 +21,7 @@ const Detail = () => {
         <>
             <Head/>
             <Container maxWidth="md">
-                <Typography variant="h4" className="m-t-30">{name.toUpperCase()}</Typography>
+                <Typography variant="h4" className="m-t-30">{name}</Typography>
                 <br/>
                 <Card>
                     <CardContent>
