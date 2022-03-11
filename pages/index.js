@@ -1,14 +1,14 @@
 import Head from "./components/head";
-import {Container, Typography, Grid, Alert} from "@mui/material";
+import {Container, Typography, Grid, Alert, Card, CardContent, CardMedia, Chip} from "@mui/material";
 import axios from 'axios';
-import {useState, useEffect, createRef} from "react";
+import {useState, useEffect} from "react";
 import { Offline } from "react-detect-offline";
 import Link from 'next/link';
+import LazyLoad from "react-lazy-load";
 const Home = () => {
   const [loading, setLoading] = useState(false);
   const [pokemons, setPokemons] = useState([]);
   const [limit, setLimit] = useState(12);
-  const contentScroll = createRef();
   const fetchPokemons = async () => {
     setLoading(true)
     const resp = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=12`);
@@ -28,10 +28,10 @@ const Home = () => {
     const html = document.documentElement;
     const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
     const windowBottom = windowHeight + window.pageYOffset;
-    if (windowBottom >= docHeight) {
+    if (windowBottom + 100 >= docHeight) {
       setLimit(limit+12)
     }
-}
+  }
 
   useEffect(()=>{
     fetchPokemons();
@@ -43,9 +43,9 @@ const Home = () => {
       window.removeEventListener("scroll", handleScroll);
     }
   }, [limit])
-  console.log(loading)
+
   return (
-    <div ref={contentScroll}>
+    <div>
       <Head/>
       <Container maxWidth="md">
         <Offline><Alert severity="error">Offline</Alert></Offline>
